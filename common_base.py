@@ -35,7 +35,7 @@ class Config:
 
 def load_config() -> Config:
     config = Config()
-    with open("./main_conf", "r", encoding="utf-8") as f:
+    with open("./content_merge_conf", "r", encoding="utf-8") as f:
         for line in f.readlines():
             [key, value] = line.split()
             config.set_attr(key, value)
