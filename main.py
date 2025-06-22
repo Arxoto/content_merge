@@ -53,8 +53,6 @@ def main():
     do_merge = args.d
     un_merge = args.u
 
-    print(do_merge, un_merge)
-
     if not do_merge and not un_merge:
         do_action(True)
         do_action(False)
