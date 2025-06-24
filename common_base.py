@@ -19,11 +19,11 @@ class Config:
     def __init__(self) -> None:
         self.zip_pwd = ""
         self.encrypt_key = self.defaule_encrypt_key
-        self.origin = ""
-        self.zipped = ""
-        self.encrypted = ""
-        self.decrypted = ""
-        self.restored = ""
+        self.origin = "./test_workspace/0_0_origin/"
+        self.zipped = "./test_workspace/0_1_zipped/"
+        self.encrypted = "./test_workspace/0_2_encrypted/"
+        self.decrypted = "./test_workspace/0_3_decrypted/"
+        self.restored = "./test_workspace/0_4_restored/"
 
     def set_attr(self, key: str, value: str) -> None:
         if key == "encrypt_key":
@@ -68,7 +68,7 @@ def init_workspace(source_folder, target_folder):
 
     if not os.path.isdir(folder_path):
         raise Exception(f"{folder_path} not folder")
-    
+
     if not os.listdir(folder_path):
         return
 

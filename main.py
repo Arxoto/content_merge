@@ -54,7 +54,7 @@ def main():
     un_merge = args.u
 
     if not do_merge and not un_merge:
-        LOG.info("will do do_merge and do un_merge both, if you want to do one of them, use args '-d' or '-u'")
+        LOG.info("will do do_merge and do un_merge both. if you want to do one of them, use args '-d' or '-u'.")
         do_action(True)
         do_action(False)
     else:
