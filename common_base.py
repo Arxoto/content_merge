@@ -1,6 +1,8 @@
 import logging
 import os
+import stat
 import shutil
+import typing
 
 
 LOG = logging.getLogger()
@@ -41,6 +43,9 @@ def load_config() -> Config:
             config.set_attr(key, value)
     return config
 
+def rmtree_handler(func: typing.Callable[..., typing.Any], path: str, e: BaseException):
+    os.chmod(path, stat.S_IWRITE)
+    func(path)
 
 def init_workspace(source_folder, target_folder):
     """
@@ -73,7 +78,8 @@ def init_workspace(source_folder, target_folder):
         return
 
     LOG.info("empty the folder: %s", folder_path)
-    shutil.rmtree(folder_path)
+    shutil.rmtree(folder_path, onexc=rmtree_handler)
+    # shutil.rmtree(folder_path)
     os.makedirs(folder_path)
 
     if not os.path.exists(folder_path):
