@@ -1,3 +1,10 @@
+# /// script
+# requires-python = ">=3.14"
+# dependencies = [
+#   "pycryptodome>=3.23.0",
+# ]
+# ///
+
 import logging
 import argparse
 import common_base, common_encrypt, common_zip
