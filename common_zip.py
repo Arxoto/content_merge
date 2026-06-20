@@ -22,6 +22,7 @@ def zip(source_folder: str, target_folder: str, archive_name: str, pwd=""):
     )
 
     # 分卷大小 35M 一般超过 50 MiB 时会警告 超过 100 MiB 时会阻止 必须使用 Git LFS 来管理
+    # WARN!!! 这个命令会导致同样的文件的两次压缩结果不同 因为记录了时间信息还有多线程压缩
     # powershell> 7z a -v35m .\0_1_zipped\archive_volumes.zip .\0_0_origin\*
     # output: .\0_1_zipped\archive_volumes.zip.001
     cmd = [
