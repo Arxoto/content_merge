@@ -5,10 +5,12 @@
 # ]
 # ///
 
-import logging
 import argparse
-import common_base, common_encrypt, common_zip
+import logging
 
+import common_base
+import common_encrypt
+import common_zip
 
 LOG = logging.getLogger()
 
